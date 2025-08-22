@@ -58,7 +58,7 @@ const Development = () => {
   return (
     <>
       <Topbar iconName={"TrendingUp"} title="Development & Economy" subtitle="Comprehensive economic indicators and GDP analysis across major economies" />
-      <section className="flex flex-col w-[60%] bg-white p-8 border-0 rounded-2xl m-4">
+      <section className="shadow-lg shadow-blue-100 flex flex-col w-[40%] bg-white p-8 border-0 rounded-2xl m-4">
         {transformedData.length > 0 ? (
           <LineChart width={600} height={400} data={transformedData}>
             <CartesianGrid strokeDasharray="3 3" />
