@@ -5,9 +5,11 @@ type TopbarProps = {
   title: string;
   subtitle: string;
   iconName: keyof typeof Icons;
+  onPrint: () => void;
+  onRefresh: () => void;
 }
 
-const Topbar = ({ title, subtitle, iconName }: TopbarProps) => {
+const Topbar = ({ title, subtitle, iconName, onPrint, onRefresh }: TopbarProps) => {
   const IconComponent = Icons[iconName]
 
   return (
@@ -17,14 +19,14 @@ const Topbar = ({ title, subtitle, iconName }: TopbarProps) => {
           <IconComponent className="mr-2" />
           {title}
         </h1>
-        <p className='italic text-gray-500'>{subtitle}</p>
+        <p className='italic text-zinc-400'>{subtitle}</p>
       </div>
-      <div className='flex flex-row ml-auto items-center font-semibold'>
-        <button className="text-gray-500 min-h-10 rounded-2xl py-2 px-4 flex flex-row items-center">
+      <div className='flex flex-row ml-auto items-center [&>*]:hover:cursor-pointer [&>*]:mr-1'>
+        <button onClick={onRefresh} className="hover:bg-blue-50 text-zinc-400 min-h-10 rounded-xl py-2 px-4 flex flex-row items-center">
           <RefreshCcw size={16} className='mr-2' />
-          <p className=''>Refresh</p>
+          <p className='text-zinc-400'>Refresh</p>
         </button>
-        <button className="text-white min-h-10 font-bold text-md bg-blue-500 rounded-xl px-4 flex flex-row items-center">
+        <button onClick={onPrint} className="text-white min-h-10 font-bold text-md bg-blue-500 rounded-xl px-4 flex flex-row items-center hover:brightness-120">
           <Download size={20} className='mr-2' />
           Export
         </button>
