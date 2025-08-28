@@ -51,7 +51,7 @@ const CustomLineChart = ({
             textAnchor="end"
             height={80}
           />
-          {/* <YAxis label={{ value: yLabel, angle: -90, position: "insideLeft" }} /> */}
+          <YAxis label={{ value: yLabel, angle: -90, position: "insideLeft" }} />
           <Tooltip content={<CustomTooltip />} />
           <Legend />
           <Line

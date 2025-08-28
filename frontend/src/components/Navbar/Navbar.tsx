@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import { Home, BarChart, TrendingUp, Activity, Users, ChevronRight, Globe, ChevronLeft, ChevronLeftCircleFill, ChevronRightCircleFill, ChevronRightCircle, ChevronLeftCircle } from '@geist-ui/icons'
+import { Home, BarChart, TrendingUp, Activity, Users, ChevronRight, Globe, ChevronRightCircle, ChevronLeftCircle } from '@geist-ui/icons'
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -9,13 +9,12 @@ const Navbar = () => {
   const isActiveLink = (href: string) => pathname === href;
   const [isOpen, setIsOpen] = useState(true);
 
-  // Helper function to get link classes
   const getLinkClasses = (href: string) => {
-    const baseClasses = "rounded-br-md rounded-md w-full flex flex-row border-l-6 mb-1 hover:text-blue-600 p-4";
+    const baseClasses = "p-4 rounded-br-md rounded-md w-full flex flex-row border-l-6 mb-1 hover:bg-zinc-100";
     const activeClasses = "border-l-6 border-b-0 border-blue-500 bg-blue-50 text-blue-600";
-    const iactiveClasses = "border-l-6 border-b-0 border-blue-50";
+    const inactiveClasses = "border-l-6 border-b-0 border-blue-50";
 
-    return `${baseClasses} ${isActiveLink(href) ? activeClasses : iactiveClasses}`;
+    return `${baseClasses} ${isActiveLink(href) ? activeClasses : inactiveClasses}`;
   };
 
   const size = isOpen ? "min-w-1/6" : "w-20"
@@ -83,7 +82,7 @@ const Navbar = () => {
             </section>
           )
       }
-      <section className={`${isOpen ? "p-4 text-sm" : "px-1 py-2 text-xs"} flex flex-col items-center justify-center text-center border-t-2 border-t-blue-200 mt-auto italic text-zinc-400`}>
+      <section className={`${isOpen ? "p-4 text-sm" : "px-1 py-2 text-xs"} w-full flex flex-col items-center justify-center text-center border-t-2 border-t-blue-200 mt-auto italic text-zinc-400`}>
         <Globe className='mr-2' size={20} />
         <p>World Bank Open Data</p>
         <p>Analytics Dashboard v2.0</p>

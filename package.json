@@ -1,31 +1,49 @@
 {
-  "name": "world-bank",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "@geist-ui/icons": "^1.0.2",
-    "next": "15.5.0",
-    "postcss": "^8.5.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-to-print": "^3.1.1",
-    "recharts": "^3.1.2"
-  },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4.1.12",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.0",
-    "tailwindcss": "^4.1.12",
-    "typescript": "^5"
-  }
+    "concurrently": "^9.2.1"
+  },
+  "name": "world-bank",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "ansi-regex": "^5.0.1",
+    "ansi-styles": "^4.3.0",
+    "chalk": "^4.1.2",
+    "cliui": "^8.0.1",
+    "color-convert": "^2.0.1",
+    "color-name": "^1.1.4",
+    "emoji-regex": "^8.0.0",
+    "escalade": "^3.2.0",
+    "get-caller-file": "^2.0.5",
+    "has-flag": "^4.0.0",
+    "is-fullwidth-code-point": "^3.0.0",
+    "require-directory": "^2.1.1",
+    "rxjs": "^7.8.2",
+    "shell-quote": "^1.8.3",
+    "string-width": "^4.2.3",
+    "strip-ansi": "^6.0.1",
+    "supports-color": "^8.1.1",
+    "tree-kill": "^1.2.2",
+    "tslib": "^2.8.1",
+    "wrap-ansi": "^7.0.0",
+    "y18n": "^5.0.8",
+    "yargs": "^17.7.2",
+    "yargs-parser": "^21.1.1"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"go run backend/main.go\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "go run backend/main.go"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigogollo/world-bank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigogollo/world-bank/issues"
+  },
+  "homepage": "https://github.com/rodrigogollo/world-bank#readme",
+  "description": ""
 }
